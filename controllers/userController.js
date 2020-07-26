@@ -19,6 +19,15 @@ function login (req, res) {
   }
 }
 
+function signup (req, res) {
+  if (req.body) {
+    res.send({ status: true })
+  } else {
+    res.end('error')
+  }
+}
+
 module.exports = {
-  login
+  login,
+  signup
 }
