@@ -5,7 +5,8 @@ var express = require('express')
 var bodyParser = require('body-parser')
 var app = express()
 
-var userRoutes = require('./routes/userRoutes')
+var userRoutes = require('./routes/physioRoutes')
+var patientRoutes = require('./routes/patientRoutes')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -19,5 +20,6 @@ app.use((req, res, next) => {
 })
 
 app.use('/api', userRoutes)
+app.use('/api', patientRoutes)
 
 module.exports = app
