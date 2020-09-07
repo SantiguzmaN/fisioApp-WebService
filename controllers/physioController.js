@@ -32,7 +32,6 @@ function login (req, res) {
 function signup (req, res) {
   var physio = new Physiotherapist()
   if (req.body) {
-    console.log('entrates al local')
     const body = req.body
     physio.name = body.name
     physio.email = body.email

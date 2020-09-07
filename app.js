@@ -7,6 +7,7 @@ var app = express()
 
 var userRoutes = require('./routes/physioRoutes')
 var patientRoutes = require('./routes/patientRoutes')
+var appointmentRoute = require('./routes/appointmentRoutes')
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -21,5 +22,6 @@ app.use((req, res, next) => {
 
 app.use('/api', userRoutes)
 app.use('/api', patientRoutes)
+app.use('/api', appointmentRoute)
 
 module.exports = app
